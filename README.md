@@ -55,7 +55,7 @@ systemctl status prometheus.service
 ```
 
 При необходимости прикрепитe сюда скриншоты
-![скрин статуса](img/Scren_zadanie1)
+![скрин статуса](img/Scren_zadanie1.jpg)
 
 
 ---
@@ -91,7 +91,7 @@ systemctl status node_exporter
 ```
 
 При необходимости прикрепитe сюда скриншоты
-![скрин нод экпортера](img/Screen_zadanie2)
+![скрин нод экпортера](img/Screen_zadanie2.jpg)
 
 
 ---
@@ -119,8 +119,8 @@ systemctl status prometheus.service
 ```
 
 При необходимости прикрепитe сюда скриншоты
-![ Prometheus вкладки Status > Targets](img/Screen_zadanie3-1)
-![ Prometheus вкладки Status > Configuration](img/Screen_zadanie3-2)
+![ Prometheus вкладки Status > Targets](img/Screen_zadanie3-1.jpg)
+![ Prometheus вкладки Status > Configuration](img/Screen_zadanie3-2.jpg)
 
 ### Задание 4
 
@@ -149,4 +149,4 @@ systemctl status grafana-server
 ```
 
 При необходимости прикрепитe сюда скриншоты
-![графана юзер Darth](img/Screen_zadanie4)
+![графана юзер Darth](img/Screen_zadanie4.jpg)
