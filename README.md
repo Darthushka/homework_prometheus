@@ -55,7 +55,7 @@ systemctl status prometheus.service
 ```
 
 При необходимости прикрепитe сюда скриншоты
-![скрин статуса](img/Scren_zadanie1.jpg)
+![скрин статуса](img/Screen_zadanie1.jpg)
 
 
 ---
