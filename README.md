@@ -1,4 +1,4 @@
-# Домашнее задание к занятию "`Название занятия`" - `Фамилия и имя студента`
+# Домашнее задание к занятию "`Система мониторинга Prometheus часть 1`" - `Громов Дмитрий`
 
 
 ### Инструкция по выполнению домашнего задания
@@ -35,14 +35,27 @@
 
 ```
 Поле для вставки кода...
-....
-....
+useradd --no-create-home --shell /bin/false prometheus
+wget https://github.com/prometheus/prometheus/releases/download/v3.15.0/prometheus-3.15.0.linux-amd64.tar.gz
+tar xvfz prometheus-3.15.0.linux-amd64.tar.gz
+cd prometheus-3.15.0.linux-amd64
+mkdir /etc/prometheus
+mkdir /var/lib/prometheus
+cp ./prometheus promtool /usr/local/bin
+cp ./prometheus.yml /etc/prometheus
+chown -R prometheus:prometheus /etc/prometheus/ /var/lib/prometheus/
+chown prometheus:prometheus /usr/local/bin/prometheus
+chown prometheus:prometheus /usr/local/bin/promtool
+nano /etc/systemd/system/prometheus.service
+systemctl enable prometheus.service
+systemctl start prometheus.service 
+systemctl status prometheus.service
 ....
 ....
 ```
 
 `При необходимости прикрепитe сюда скриншоты
-![Название скриншота 1](ссылка на скриншот 1)`
+![скрин статуса](img/Scren_zadanie1)`
 
 
 ---
@@ -60,6 +73,17 @@
 
 ```
 Поле для вставки кода...
+wget https://github.com/prometheus/node_exporter/releases/download/v1.12.1/node_exporter-1.12.1.linux-amd64.tar.gz
+tar xvfz node_exporter-1.12.1.linux-amd64.tar.gz
+cd node_exporter-1.12.1.linux-amd64/
+mkdir /etc/prometheus/node-exporter
+cp ./node_exporter /etc/prometheus/node-exporter/
+chown prometheus:prometheus /etc/prometheus/node-exporter/
+chown prometheus:prometheus /etc/prometheus/node-exporter/node_exporter
+nano /etc/systemd/system/node_exporter.service
+systemctl enable node_exporter
+systemctl start node_exporter
+systemctl status node_exporter
 ....
 ....
 ....
@@ -67,7 +91,7 @@
 ```
 
 `При необходимости прикрепитe сюда скриншоты
-![Название скриншота 2](ссылка на скриншот 2)`
+![скрин нод экпортера](img/Screen_zadanie2)`
 
 
 ---
@@ -85,6 +109,9 @@
 
 ```
 Поле для вставки кода...
+nano /etc/prometheus/prometheus.yml
+systemctl restart prometheus.service
+systemctl status prometheus.service
 ....
 ....
 ....
@@ -92,7 +119,8 @@
 ```
 
 `При необходимости прикрепитe сюда скриншоты
-![Название скриншота](ссылка на скриншот)`
+![ Prometheus вкладки Status > Targets](img/Screen_zadanie3-1)
+![ Prometheus вкладки Status > Configuration](img/Screen_zadanie3-2)
 
 ### Задание 4
 
@@ -107,6 +135,13 @@
 
 ```
 Поле для вставки кода...
+sudo apt-get install -y adduser libfontconfig1 musl
+wget https://mirror.yandex.ru/mirrors/packages.grafana.com/oss/deb/pool/main/g/grafana/grafana_12.4.2_23531306697_linux_amd64.deb
+dpkg -i grafana_12.4.2_23531306697_linux_amd64.deb
+systemctl eneble grafana-server
+systemctl start grafana-server
+systemctl status grafana-server
+
 ....
 ....
 ....
@@ -114,4 +149,4 @@
 ```
 
 `При необходимости прикрепитe сюда скриншоты
-![Название скриншота](ссылка на скриншот)`
+![графана юзер Darth](img/Screen_zadanie4)`
